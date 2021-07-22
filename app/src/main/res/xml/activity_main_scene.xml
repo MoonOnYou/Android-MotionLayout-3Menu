@@ -4,27 +4,20 @@
 
     <Transition
         app:constraintSetStart="@+id/menu1"
-        app:constraintSetEnd="@id/menu2" />
+        app:constraintSetEnd="@id/menu2"
+        app:duration="100"/>
 
-    <Transition
-        app:constraintSetStart="@+id/menu2"
-        app:constraintSetEnd="@id/menu1" />
-
-    <Transition
-        app:constraintSetStart="@+id/menu1"
-        app:constraintSetEnd="@id/menu3" />
 
     <Transition
         app:constraintSetEnd="@id/menu3"
-        app:constraintSetStart="@+id/menu1" />
+        app:constraintSetStart="@+id/menu1"
+        app:duration="100"/>
 
     <Transition
         app:constraintSetEnd="@id/menu2"
-        app:constraintSetStart="@+id/menu3" />
+        app:constraintSetStart="@+id/menu3"
+        app:duration="100"/>
 
-    <Transition
-        app:constraintSetEnd="@id/menu3"
-        app:constraintSetStart="@+id/menu2" />
 
     <ConstraintSet android:id="@+id/menu1">
         <Constraint android:id="@id/title1"

@@ -12,14 +12,30 @@ class MainActivity : AppCompatActivity() {
 
         val motionLayout = findViewById<MotionLayout>(R.id.motion_container)
 
+
         findViewById<TextView>(R.id.title1).setOnClickListener {
-            motionLayout.setTransition(R.id.menu1, R.id.menu2)
+            if (motionLayout?.currentState == R.id.menu2) {
+                motionLayout.setTransition(R.id.menu2, R.id.menu1)
+            } else if (motionLayout?.currentState == R.id.menu3) {
+                motionLayout.setTransition(R.id.menu3, R.id.menu1)
+            }
+            motionLayout.transitionToEnd()
         }
         findViewById<TextView>(R.id.title2).setOnClickListener {
-            motionLayout.setTransition(R.id.menu2, R.id.menu3)
+            if (motionLayout?.currentState == R.id.menu1) {
+                motionLayout.setTransition(R.id.menu1, R.id.menu2)
+            } else if (motionLayout?.currentState == R.id.menu3) {
+                motionLayout.setTransition(R.id.menu3, R.id.menu2)
+            }
+            motionLayout.transitionToEnd()
         }
         findViewById<TextView>(R.id.title3).setOnClickListener {
-            motionLayout.setTransition(R.id.menu3, R.id.menu1)
+            if (motionLayout?.currentState == R.id.menu1) {
+                motionLayout.setTransition(R.id.menu1, R.id.menu3)
+            } else if (motionLayout?.currentState == R.id.menu2) {
+                motionLayout.setTransition(R.id.menu2, R.id.menu3)
+            }
+            motionLayout.transitionToEnd()
         }
     }
 }
