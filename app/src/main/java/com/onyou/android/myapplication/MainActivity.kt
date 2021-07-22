@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
                 motionLayout.setTransition(R.id.menu2, R.id.menu1)
             } else if (motionLayout?.currentState == R.id.menu3) {
                 motionLayout.setTransition(R.id.menu3, R.id.menu1)
+            } else if (motionLayout?.currentState == R.id.menu4) {
+                motionLayout.setTransition(R.id.menu4, R.id.menu1)
             }
             motionLayout.transitionToEnd()
         }
@@ -26,6 +28,8 @@ class MainActivity : AppCompatActivity() {
                 motionLayout.setTransition(R.id.menu1, R.id.menu2)
             } else if (motionLayout?.currentState == R.id.menu3) {
                 motionLayout.setTransition(R.id.menu3, R.id.menu2)
+            } else if (motionLayout?.currentState == R.id.menu4) {
+                motionLayout.setTransition(R.id.menu4, R.id.menu2)
             }
             motionLayout.transitionToEnd()
         }
@@ -34,6 +38,18 @@ class MainActivity : AppCompatActivity() {
                 motionLayout.setTransition(R.id.menu1, R.id.menu3)
             } else if (motionLayout?.currentState == R.id.menu2) {
                 motionLayout.setTransition(R.id.menu2, R.id.menu3)
+            } else if (motionLayout?.currentState == R.id.menu4) {
+                motionLayout.setTransition(R.id.menu4, R.id.menu3)
+            }
+            motionLayout.transitionToEnd()
+        }
+        findViewById<TextView>(R.id.title4).setOnClickListener {
+            if (motionLayout?.currentState == R.id.menu1) {
+                motionLayout.setTransition(R.id.menu1, R.id.menu4)
+            } else if (motionLayout?.currentState == R.id.menu2) {
+                motionLayout.setTransition(R.id.menu2, R.id.menu4)
+            } else if (motionLayout?.currentState == R.id.menu3) {
+                motionLayout.setTransition(R.id.menu3, R.id.menu4)
             }
             motionLayout.transitionToEnd()
         }
